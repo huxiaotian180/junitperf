@@ -1,0 +1,401 @@
+<!doctype html>
+<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <meta charset="utf-8">
+    <title>HelloWordTest-JUnit Performance Report</title>
+
+    <style>
+
+        a {
+            color: #2a7ae2;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #2A7AE2;
+        }
+
+        a:hover {
+            color: #2a7ae2;
+            text-decoration: underline;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, serif;
+            background-color: rgb(246, 246, 246);
+        }
+
+        header {
+            height: 66px;
+            width: auto;
+            line-height: 1.8;
+            color: #044e9b;
+            text-align: center;
+            font-size: 36px;
+            border-bottom: rgb(238, 239, 237) 1px solid;
+        }
+
+        section {
+            /*padding: 25px 0 100px 100px;*/
+            /*text-align: center;*/
+            width: 960px;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        section aside {
+            float: left;
+            width: 220px;
+            border: rgb(238, 239, 237) 1px solid;
+            background: #fff;
+            min-height: 580px;
+            /*position: relative;*/
+            /*margin-right: 40px;*/
+        }
+
+        aside .list-group ul {
+            list-style: none;
+            width: 200px;
+            margin: 6px auto;
+            background: rgb(248, 246, 243);
+            padding: 0;
+            overflow: auto;
+        }
+
+        aside .list-group li {
+            border-bottom: rgb(238, 239, 237) 1px solid;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+        }
+        aside .list-group li:hover {
+            color: #111111;
+        }
+
+        aside .list-group li.active {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        aside li.borderRightSuccess {
+            border-right: green 3px solid;
+        }
+
+        aside li.borderRightFail {
+            border-right: red 3px solid;
+        }
+
+        aside li.borderRightWarn {
+            border-right: gold 3px solid;
+        }
+
+        aside .list-group a {
+            color: #111;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        aside .list-group a:hover, .list-group a:visited, .list-group a:active {
+            color: #aaaaaa;
+            text-decoration: none;
+        }
+
+        section .main-wrapper {
+            float: left;
+            margin-left: 40px;
+        }
+
+        section .test-method {
+            background: #fff;
+            width: 660px;
+            min-height: 580px;
+            border-bottom: rgb(238, 239, 237) 1px solid;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        section .test-method .test-method-name {
+            float: right;
+            font-size: 10px;
+            color: #bbb;
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+
+        section .test-method-img {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        section .data-wrapper {
+            font-size: 12px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        section .data-wrapper .left-data {
+            width: 45%;
+            height: auto;
+            border-right: #4490f7 1px solid;
+            float: left;
+        }
+
+        section .data-wrapper .right-data {
+            width: 50%;
+            height: auto;
+            float: right;
+        }
+
+        section .data-wrapper .table td, .table th {
+            padding-right: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            position: fixed;
+            bottom: 0;
+            font-size: 14px;
+            color: #aaa;
+            border-top: rgb(238, 239, 237) 1px solid;
+        }
+
+        footer #top {
+            float: right;
+            margin-right: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>JUnit 性能报告</header>
+
+<section>
+    <aside>
+        <div class="list-group">
+            <ul>
+                        <li class="borderRightSuccess active"><a
+                                href='#helloWorldTest'>helloWorldTest</a>
+                        </li>
+            </ul>
+        </div>
+    </aside>
+
+    <div class="main-wrapper">
+
+
+        <div id="helloWorldTest" class="test-method">
+            <span class="test-method-name">helloWorldTest</span>
+
+            <div id="helloWorldTest-img" class="test-method-img">
+                <!-- ADD scatter Chart here!! -->
+                <script type="text/javascript">
+                    google.charts.load('current', {'packages': ['corechart']});
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Percentile', 'Latency', {role: "tooltip"}],
+                                [ 1, 19.965 , "1% of executions ≤ 19.965ms"],
+                                [ 2, 20.015 , "2% of executions ≤ 20.015ms"],
+                                [ 3, 20.058 , "3% of executions ≤ 20.058ms"],
+                                [ 4, 20.093 , "4% of executions ≤ 20.093ms"],
+                                [ 5, 20.121 , "5% of executions ≤ 20.121ms"],
+                                [ 6, 20.144 , "6% of executions ≤ 20.144ms"],
+                                [ 7, 20.166 , "7% of executions ≤ 20.166ms"],
+                                [ 8, 20.186 , "8% of executions ≤ 20.186ms"],
+                                [ 9, 20.205 , "9% of executions ≤ 20.205ms"],
+                                [ 10, 20.222 , "10% of executions ≤ 20.222ms"],
+                                [ 11, 20.238 , "11% of executions ≤ 20.238ms"],
+                                [ 12, 20.253 , "12% of executions ≤ 20.253ms"],
+                                [ 13, 20.266 , "13% of executions ≤ 20.266ms"],
+                                [ 14, 20.278 , "14% of executions ≤ 20.278ms"],
+                                [ 15, 20.289 , "15% of executions ≤ 20.289ms"],
+                                [ 16, 20.298 , "16% of executions ≤ 20.298ms"],
+                                [ 17, 20.307 , "17% of executions ≤ 20.307ms"],
+                                [ 18, 20.315 , "18% of executions ≤ 20.315ms"],
+                                [ 19, 20.322 , "19% of executions ≤ 20.322ms"],
+                                [ 20, 20.329 , "20% of executions ≤ 20.329ms"],
+                                [ 21, 20.337 , "21% of executions ≤ 20.337ms"],
+                                [ 22, 20.344 , "22% of executions ≤ 20.344ms"],
+                                [ 23, 20.352 , "23% of executions ≤ 20.352ms"],
+                                [ 24, 20.36 , "24% of executions ≤ 20.36ms"],
+                                [ 25, 20.369 , "25% of executions ≤ 20.369ms"],
+                                [ 26, 20.379 , "26% of executions ≤ 20.379ms"],
+                                [ 27, 20.389 , "27% of executions ≤ 20.389ms"],
+                                [ 28, 20.398 , "28% of executions ≤ 20.398ms"],
+                                [ 29, 20.411 , "29% of executions ≤ 20.411ms"],
+                                [ 30, 20.422 , "30% of executions ≤ 20.422ms"],
+                                [ 31, 20.435 , "31% of executions ≤ 20.435ms"],
+                                [ 32, 20.448 , "32% of executions ≤ 20.448ms"],
+                                [ 33, 20.463 , "33% of executions ≤ 20.463ms"],
+                                [ 34, 20.478 , "34% of executions ≤ 20.478ms"],
+                                [ 35, 20.494 , "35% of executions ≤ 20.494ms"],
+                                [ 36, 20.514 , "36% of executions ≤ 20.514ms"],
+                                [ 37, 20.536 , "37% of executions ≤ 20.536ms"],
+                                [ 38, 20.559 , "38% of executions ≤ 20.559ms"],
+                                [ 39, 20.584 , "39% of executions ≤ 20.584ms"],
+                                [ 40, 20.61 , "40% of executions ≤ 20.61ms"],
+                                [ 41, 20.638 , "41% of executions ≤ 20.638ms"],
+                                [ 42, 20.667 , "42% of executions ≤ 20.667ms"],
+                                [ 43, 20.698 , "43% of executions ≤ 20.698ms"],
+                                [ 44, 20.735 , "44% of executions ≤ 20.735ms"],
+                                [ 45, 20.771 , "45% of executions ≤ 20.771ms"],
+                                [ 46, 20.804 , "46% of executions ≤ 20.804ms"],
+                                [ 47, 20.835 , "47% of executions ≤ 20.835ms"],
+                                [ 48, 20.868 , "48% of executions ≤ 20.868ms"],
+                                [ 49, 20.903 , "49% of executions ≤ 20.903ms"],
+                                [ 50, 20.946 , "50% of executions ≤ 20.946ms"],
+                                [ 51, 20.992 , "51% of executions ≤ 20.992ms"],
+                                [ 52, 21.047 , "52% of executions ≤ 21.047ms"],
+                                [ 53, 21.11 , "53% of executions ≤ 21.11ms"],
+                                [ 54, 21.176 , "54% of executions ≤ 21.176ms"],
+                                [ 55, 21.242 , "55% of executions ≤ 21.242ms"],
+                                [ 56, 21.304 , "56% of executions ≤ 21.304ms"],
+                                [ 57, 21.358 , "57% of executions ≤ 21.358ms"],
+                                [ 58, 21.428 , "58% of executions ≤ 21.428ms"],
+                                [ 59, 21.5 , "59% of executions ≤ 21.5ms"],
+                                [ 60, 21.573 , "60% of executions ≤ 21.573ms"],
+                                [ 61, 21.654 , "61% of executions ≤ 21.654ms"],
+                                [ 62, 21.745 , "62% of executions ≤ 21.745ms"],
+                                [ 63, 21.843 , "63% of executions ≤ 21.843ms"],
+                                [ 64, 21.958 , "64% of executions ≤ 21.958ms"],
+                                [ 65, 22.07 , "65% of executions ≤ 22.07ms"],
+                                [ 66, 22.181 , "66% of executions ≤ 22.181ms"],
+                                [ 67, 22.304 , "67% of executions ≤ 22.304ms"],
+                                [ 68, 22.449 , "68% of executions ≤ 22.449ms"],
+                                [ 69, 22.605 , "69% of executions ≤ 22.605ms"],
+                                [ 70, 22.776 , "70% of executions ≤ 22.776ms"],
+                                [ 71, 22.972 , "71% of executions ≤ 22.972ms"],
+                                [ 72, 23.151 , "72% of executions ≤ 23.151ms"],
+                                [ 73, 23.371 , "73% of executions ≤ 23.371ms"],
+                                [ 74, 23.597 , "74% of executions ≤ 23.597ms"],
+                                [ 75, 23.826 , "75% of executions ≤ 23.826ms"],
+                                [ 76, 24.143 , "76% of executions ≤ 24.143ms"],
+                                [ 77, 24.402 , "77% of executions ≤ 24.402ms"],
+                                [ 78, 24.657 , "78% of executions ≤ 24.657ms"],
+                                [ 79, 25 , "79% of executions ≤ 25ms"],
+                                [ 80, 25.387 , "80% of executions ≤ 25.387ms"],
+                                [ 81, 25.854 , "81% of executions ≤ 25.854ms"],
+                                [ 82, 26.341 , "82% of executions ≤ 26.341ms"],
+                                [ 83, 26.817 , "83% of executions ≤ 26.817ms"],
+                                [ 84, 27.299 , "84% of executions ≤ 27.299ms"],
+                                [ 85, 27.933 , "85% of executions ≤ 27.933ms"],
+                                [ 86, 28.674 , "86% of executions ≤ 28.674ms"],
+                                [ 87, 29.545 , "87% of executions ≤ 29.545ms"],
+                                [ 88, 30.243 , "88% of executions ≤ 30.243ms"],
+                                [ 89, 30.882 , "89% of executions ≤ 30.882ms"],
+                                [ 90, 31.436 , "90% of executions ≤ 31.436ms"],
+                                [ 91, 32.4 , "91% of executions ≤ 32.4ms"],
+                                [ 92, 33.598 , "92% of executions ≤ 33.598ms"],
+                                [ 93, 34.961 , "93% of executions ≤ 34.961ms"],
+                                [ 94, 36.492 , "94% of executions ≤ 36.492ms"],
+                                [ 95, 39.561 , "95% of executions ≤ 39.561ms"],
+                                [ 96, 41.92 , "96% of executions ≤ 41.92ms"],
+                                [ 97, 44.536 , "97% of executions ≤ 44.536ms"],
+                                [ 98, 53.276 , "98% of executions ≤ 53.276ms"],
+                                [ 99, 61.765 , "99% of executions ≤ 61.765ms"],
+                                [ 100, 86.785 , "100% of executions ≤ 86.785ms"],
+                        ]);
+                        var options = {
+                            title: 'Latency percentile Distribution',
+                            hAxis: {title: 'Percentile', minValue: 0, maxValue: 100},
+                            vAxis: {title: 'Latency', minValue: 0, maxValue: 15},
+                            legend: 'none',
+                            lineWidth: 1,
+                            pointSize: 7,
+                            dataOpacity: 0.5
+                        };
+                        var chart = new google.visualization.ScatterChart(document.getElementById('helloWorldTest-img'));
+                        chart.draw(data, options);
+                    }
+                </script>
+            </div>
+
+            <div class="data-wrapper">
+                <div class="left-data">
+                    <ul>
+                        <li><label>调用数
+                            : </label><span>84,326</span>
+                        </li>
+                        <li>
+                            <label>成功数: </label><span>84,326</span>
+                        </li>
+                        <li><label>线程数
+                            : </label><span>1,000</span></li>
+
+                        <li><label>准备时间
+                            : </label><span>1,000 ms</span></li>
+                        <li><label>执行时间
+                            : </label><span>2,000 ms</span>
+                        </li>
+                        <li><label>开始时间: </label><span>2019-06-18 14:37:24.303</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="right-data">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <td>类型</td>
+                            <td>实际</td>
+                            <td>需求</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td>吞吐量</td>
+                            <td style="color: #00000">83,329 / s</td>
+                            <td>-1 / s</td>
+                        </tr>
+                        <tr>
+                            <td>最小延迟</td>
+                            <td style="color: #00000">19.859 ms</td>
+                            <td>-1 ms</td>
+                        </tr>
+                        <tr>
+                            <td>平均延迟</td>
+                            <td style="color: #00000">24.108 ms</td>
+                            <td>-1 ms</td>
+                        </tr>
+                        <tr>
+                            <td>最大延迟</td>
+                            <td style="color: #00000">86.785 ms</td>
+                            <td>-1 ms</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+<footer>
+    <div>
+    报告技术支持 <a href='https://github.com/houbb/junitperf'>JunitPerf</a>
+        <a href="#" id="top">顶部</a>
+    </div>
+</footer>
+
+</body>
+</html>
+
+
